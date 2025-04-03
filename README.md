@@ -105,7 +105,7 @@ Error: node_modules/@angular/fire/compat/database/interfaces.d.ts:52:18 - error 
 
 2. Modifica el archivo así:
 
-  ```export interface DatabaseSnapshotExists<T> extends firebase.database.DataSnapshot {
+  ``` export interface DatabaseSnapshotExists<T> extends firebase.database.DataSnapshot {
   exists(): true;
   val(): T;
   // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
