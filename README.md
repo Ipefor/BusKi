@@ -54,7 +54,68 @@
    ionic serve
    ```
 
-## 📸 Capturas de Pantalla
+## ❌ Gestión de errores
+
+1. Si al hacer el ionic serve salta este error:
+   ```Error: node_modules/@angular/fire/compat/database/interfaces.d.ts:47:18 - error TS2430: Interface 'DatabaseSnapshotExists<T>' incorrectly extends interface 'DataSnapshot'.
+  Types of property 'forEach' are incompatible.
+    Type '(action: (a: DatabaseSnapshot<T>) => boolean) => boolean' is not assignable to type '(action: (a: DataSnapshot & { key: string; }) => boolean | void) => boolean'.
+      Types of parameters 'action' and 'action' are incompatible.
+        Types of parameters 'a' and 'a' are incompatible.
+          Type 'DatabaseSnapshot<T>' is not assignable to type 'DataSnapshot & { key: string; }'.
+            Type 'DatabaseSnapshotExists<T>' is not assignable to type 'DataSnapshot & { key: string; }'.
+              Type 'DatabaseSnapshotExists<T>' is not assignable to type 'DataSnapshot'.
+                Types of property 'forEach' are incompatible.
+                  Type '(action: (a: DatabaseSnapshot<T>) => boolean) => boolean' is not assignable to type '(action: (a: DataSnapshot & { key: string; }) => boolean | void) => boolean'.
+                    Types of parameters 'action' and 'action' are incompatible.
+                      Types of parameters 'a' and 'a' are incompatible.
+                        Type 'DatabaseSnapshot<T>' is not assignable to type 'DataSnapshot & { key: string; }'.
+                          Type 'DatabaseSnapshotDoesNotExist<T>' is not assignable to type 'DataSnapshot & { key: string; }'.
+                            Type 'DatabaseSnapshotDoesNotExist<T>' is not assignable to type '{ key: string; }'.
+                              Types of property 'key' are incompatible.
+                                Type 'string | null' is not assignable to type 'string'.
+                                  Type 'null' is not assignable to type 'string'.
+
+47 export interface DatabaseSnapshotExists<T> extends firebase.database.DataSnapshot {
+                    ~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: node_modules/@angular/fire/compat/database/interfaces.d.ts:52:18 - error TS2430: Interface 'DatabaseSnapshotDoesNotExist<T>' incorrectly extends interface 'DataSnapshot'.
+  Types of property 'forEach' are incompatible.
+    Type '(action: (a: DatabaseSnapshot<T>) => boolean) => boolean' is not assignable to type '(action: (a: DataSnapshot & { key: string; }) => boolean | void) => boolean'.
+      Types of parameters 'action' and 'action' are incompatible.
+        Types of parameters 'a' and 'a' are incompatible.
+          Type 'DatabaseSnapshot<T>' is not assignable to type 'DataSnapshot & { key: string; }'.
+            Type 'DatabaseSnapshotDoesNotExist<T>' is not assignable to type 'DataSnapshot & { key: string; }'.
+              Type 'DatabaseSnapshotDoesNotExist<T>' is not assignable to type 'DataSnapshot'.
+                Types of property 'forEach' are incompatible.
+                  Type '(action: (a: DatabaseSnapshot<T>) => boolean) => boolean' is not assignable to type '(action: (a: DataSnapshot & { key: string; }) => boolean | void) => boolean'.
+                    Types of parameters 'action' and 'action' are incompatible.
+                      Types of parameters 'a' and 'a' are incompatible.
+                        Type 'DatabaseSnapshot<T>' is not assignable to type 'DataSnapshot & { key: string; }'.
+                          Type 'DatabaseSnapshotExists<T>' is not assignable to type 'DataSnapshot & { key: string; }'.
+                            Type 'DatabaseSnapshotExists<T>' is not assignable to type '{ key: string; }'.
+                              Types of property 'key' are incompatible.
+                                Type 'string | null' is not assignable to type 'string'.
+                                  Type 'null' is not assignable to type 'string'.
+
+52 export interface DatabaseSnapshotDoesNotExist<T> extends firebase.database.DataSnapshot { ```
+
+2. Modifica el archivo así:
+   ```export interface DatabaseSnapshotExists<T> extends firebase.database.DataSnapshot {
+  exists(): true;
+  val(): T;
+  // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
+  forEach(action: (a: firebase.database.DataSnapshot & { key: string }) => boolean | void): boolean;
+}
+export interface DatabaseSnapshotDoesNotExist<T> extends firebase.database.DataSnapshot {
+  exists(): false;
+  val(): null;
+  // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
+  forEach(action: (a: firebase.database.DataSnapshot & { key: string }) => boolean | void): boolean;
+}```
+
+## 📸 Capturas de pantalla
 
 ![imagen](https://github.com/user-attachments/assets/4d61f650-8883-4fc9-9312-dfa185bfbd86)
 
