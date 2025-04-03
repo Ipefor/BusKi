@@ -56,7 +56,7 @@
 
 ## 📸 Capturas de Pantalla
 
-*(En proceso)*
+![imagen](https://github.com/user-attachments/assets/4d61f650-8883-4fc9-9312-dfa185bfbd86)
 
 ---
 
