@@ -1,6 +1,6 @@
 # 📱 Chat en tiempo real con Ionic y Firebase
 
-¡Bienvenido a **BusKi**, una aplicación de chat en tiempo real! Se trata de un prototipo de app de mensajería utilizada por la empresa BusKa, un comparador de líneas de autobús, para conectar con sus usarios y clientes y resolver todas sus dudas y problemas. Esta app se ha desarrollado con **Ionic** y **Angular 17** para el frontend, y utilizando **Firebase** como backend y base de datos.
+¡Bienvenido a **BusKi**, un chat en tiempo real! Se trata de un prototipo de app de mensajería utilizada por la empresa BusKa, un comparador de líneas de autobús, para conectar con sus usarios y clientes y resolver todas sus dudas y problemas. Para su desarrollo, se ha utilizado **Ionic** y **Angular 17** para el frontend, y **Firebase** como backend y base de datos.
 
 ## 🚀 Características
 
