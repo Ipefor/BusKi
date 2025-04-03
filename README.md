@@ -57,7 +57,8 @@
 ## ❌ Gestión de errores
 
 1. Si al hacer el ionic serve salta este error:
-   ```Error: node_modules/@angular/fire/compat/database/interfaces.d.ts:47:18 - error TS2430: Interface 'DatabaseSnapshotExists<T>' incorrectly extends interface 'DataSnapshot'.
+
+  ```Error: node_modules/@angular/fire/compat/database/interfaces.d.ts:47:18 - error TS2430: Interface 'DatabaseSnapshotExists<T>' incorrectly extends interface 'DataSnapshot'.
   Types of property 'forEach' are incompatible.
     Type '(action: (a: DatabaseSnapshot<T>) => boolean) => boolean' is not assignable to type '(action: (a: DataSnapshot & { key: string; }) => boolean | void) => boolean'.
       Types of parameters 'action' and 'action' are incompatible.
@@ -103,6 +104,7 @@ Error: node_modules/@angular/fire/compat/database/interfaces.d.ts:52:18 - error 
 ```
 
 2. Modifica el archivo así:
+
    ```export interface DatabaseSnapshotExists<T> extends firebase.database.DataSnapshot {
   exists(): true;
   val(): T;
@@ -121,7 +123,4 @@ export interface DatabaseSnapshotDoesNotExist<T> extends firebase.database.DataS
 
 ![imagen](https://github.com/user-attachments/assets/4d61f650-8883-4fc9-9312-dfa185bfbd86)
 
----
-
-🎉 ¡Gracias por visitar este proyecto!
 
