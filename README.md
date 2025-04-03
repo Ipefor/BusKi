@@ -107,16 +107,16 @@ Error: node_modules/@angular/fire/compat/database/interfaces.d.ts:52:18 - error 
 
   ```typescript
 export interface DatabaseSnapshotExists<T> extends firebase.database.DataSnapshot {
-  exists(): true;
-  val(): T;
-  // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
-  forEach(action: (a: firebase.database.DataSnapshot & { key: string }) => boolean | void): boolean;
+    exists(): true;
+    val(): T;
+    // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
+    forEach(action: (a: firebase.database.DataSnapshot & { key: string }) => boolean | void): boolean;
 }
 export interface DatabaseSnapshotDoesNotExist<T> extends firebase.database.DataSnapshot {
-  exists(): false;
-  val(): null;
-  // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
-  forEach(action: (a: firebase.database.DataSnapshot & { key: string }) => boolean | void): boolean;
+    exists(): false;
+    val(): null;
+    // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
+    forEach(action: (a: firebase.database.DataSnapshot & { key: string }) => boolean | void): boolean;
 }
 ```
 
