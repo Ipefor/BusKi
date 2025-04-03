@@ -1,0 +1,64 @@
+<ion-content>
+  <ion-infinite-scroll
+    class="ion-margin-top"
+    position="top"
+    threshold="50px"
+    [disabled]="currentMessages >= countMessages"
+    [disabled]="allMessages.length < 10"
+    (ionInfinite)="loadData($event)"
+  >
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Loading messages..."
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-col>
+    <ion-list>
+      @for (message of messages; track $index) { @if (message.user ==
+      currentUser) {
+      <div class="message-bubble">
+        <div slot="end">
+          <div class="cabecera">
+            <b>{{message.user}} ({{message.location}}):</b><br /><br />
+          </div>
+          <div class="message-text">{{ message.text }}</div>
+        </div>
+      </div>
+      } @else {
+      <div class="message-bubble-no-user">
+        <div slot="start">
+          <div class="cabecera-no-user">
+            <b>{{message.user}} ({{message.location}}):</b><br /><br />
+          </div>
+          <div class="message-text-no-user">{{ message.text }}</div>
+        </div>
+      </div>
+      } }
+    </ion-list>
+  </ion-col>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row class="ion-align-items-end">
+      <ion-col class="ion-align-self-stretch">
+        <ion-input
+          (keypress)="eventHandler($event.keyCode)"
+          placeholder="Escribe..."
+          fill="solid"
+          id="name"
+          type="text"
+          [formControl]="messageInput"
+        />
+      </ion-col>
+      <ion-col size="auto">
+        <ion-button (click)="sendMessage()" [disabled]="!messageInput.valid"
+          >Enviar</ion-button
+        >
+        <ion-button color="danger" (click)="deleteMessages()"
+          >Borrar todo</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

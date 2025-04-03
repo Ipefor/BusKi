@@ -1,0 +1,46 @@
+.transparent-footer {
+  --background: transparent;
+  --ion-background-color: transparent;
+  --ion-toolbar-background: transparent;
+  --ion-toolbar-background-color: transparent;
+  --ion-toolbar-background-opacity: 0;
+  --ion-toolbar-border-color: transparent;
+}
+
+.message-text {
+  text-align: right;
+}
+
+.cabecera{
+  text-align: right;
+}
+
+.message-text-no-user {
+  text-align: left;
+}
+
+.cabecera-no-user{
+  text-align: left;
+}
+
+.message-bubble {
+  background-color: #DCF8C6; /* Color de fondo para los mensajes del usuario actual */
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 40%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.message-bubble-no-user {
+  background-color:  #F0F0F0;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 40%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  margin-right: auto;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}

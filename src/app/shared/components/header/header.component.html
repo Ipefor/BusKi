@@ -1,0 +1,15 @@
+<ion-toolbar class="color">
+  @if (!isUserActivated()) {
+    <ion-title>¡Bienvenido!</ion-title>
+  }
+  @if (isUserActivated()) {
+    <ion-title>¡Bienvenido! Un agente se unirá enseguida al chat</ion-title>
+  }
+  <ion-buttons slot="end">
+    @if (isUserActivated()) {
+      <ion-button color="danger" fill="solid" (click)="logOut()">
+        Salir
+      </ion-button>
+    }
+  </ion-buttons>
+</ion-toolbar>
