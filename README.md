@@ -10,9 +10,9 @@
 - 🔥 Base de datos en Firebase Firestore
 - 📲 Interfaz moderna basada en Ionic
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías utilizadas
 
-- **Ionic** + **Angular 17** para la interfaz
+- **Ionic** y **Angular 17** para la interfaz
 - **Firebase Authentication** para la gestión de usuarios
 - **Firebase Firestore** como base de datos NoSQL
 
