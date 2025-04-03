@@ -14,7 +14,7 @@
 
 - **Ionic** y **Angular 17** para la interfaz
 - **Firebase Authentication** para la gestión de usuarios
-- **Firebase Firestore** como base de datos NoSQL
+- **Firebase Realtime Database** como base de datos NoSQL
 
 ## 📦 Instalación
 
@@ -31,7 +31,7 @@
 
 3. Configura Firebase:
    - Crea un proyecto en Firebase
-   - Habilita **Authentication** y **Firestore**
+   - Habilita **Authentication** y **Realtime Database**
    - Copia las credenciales en el archivo `src/environments/environment.ts`:
 
 
@@ -118,6 +118,18 @@ export interface DatabaseSnapshotDoesNotExist<T> extends firebase.database.DataS
     // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
     forEach(action: (a: firebase.database.DataSnapshot & { key: string }) => boolean | void): boolean;
 }
+```
+
+3. Si te salta este error:
+
+  ```typescript
+Error: Cannot find module 'postcss-modules-local-by-default'
+```
+
+4. Instala de nuevo postcss:
+
+```bash
+npm i postcss
 ```
 
 ## 📸 Capturas de pantalla
