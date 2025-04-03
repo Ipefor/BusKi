@@ -99,7 +99,8 @@ Error: node_modules/@angular/fire/compat/database/interfaces.d.ts:52:18 - error 
                                 Type 'string | null' is not assignable to type 'string'.
                                   Type 'null' is not assignable to type 'string'.
 
-52 export interface DatabaseSnapshotDoesNotExist<T> extends firebase.database.DataSnapshot { ```
+52 export interface DatabaseSnapshotDoesNotExist<T> extends firebase.database.DataSnapshot {
+```
 
 2. Modifica el archivo así:
    ```export interface DatabaseSnapshotExists<T> extends firebase.database.DataSnapshot {
@@ -113,7 +114,8 @@ export interface DatabaseSnapshotDoesNotExist<T> extends firebase.database.DataS
   val(): null;
   // forEach(action: (a: DatabaseSnapshot<T>) => boolean): boolean;
   forEach(action: (a: firebase.database.DataSnapshot & { key: string }) => boolean | void): boolean;
-}```
+}
+```
 
 ## 📸 Capturas de pantalla
 
